@@ -3,50 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Task</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-100">
-    <!-- Header -->
-    <header class="bg-green-600 text-white py-4 text-center">
-      <h1 class="text-2xl font-bold">Welcome to Your Website Task</h1>
-      <nav class="mt-2">
-        <a href="#" class="mx-3 hover:underline">Home</a>
-        <a href="#" class="mx-3 hover:underline">About</a>
-        <a href="#" class="mx-3 hover:underline">Contact</a>
-      </nav>
-    </header>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-10">
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white shadow-md rounded-lg p-6">
-          <h2 class="text-xl font-semibold text-gray-800">About CSS</h2>
-          <p class="text-gray-600 mt-2">
-            Cascading Style Sheets (CSS) allow you to style web pages, improving
-            layout, colors, spacing, and design.
+    <title>Windows</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div
+      class="flex flex-col bg-green-600 h-40 items-center justify-center text-white"
+    >
+      <div class="font-bold text-3xl">Welcome to your website Task</div>
+      <div class="mt-2">
+        <ul class="flex space-x-6">
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="flex justify-between gap-6 p-10">
+      <div>
+        <div class="bg-white shadow-lg rounded-lg p-5 w-125 text-green-500">
+          <h2 class="font-bold text-xl mb-2">About CSS</h2>
+          <p class="text-gray-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            voluptates? Reiciendis non dolorum quasi deserunt libero, eos
+            voluptate dolorem explicabo.
           </p>
         </div>
-        <div class="bg-white shadow-md rounded-lg p-6">
-          <h2 class="text-xl font-semibold text-gray-800">Box Model</h2>
-          <p class="text-gray-600 mt-2">
-            CSS Box Model includes margins, borders, padding, and the actual
-            content, controlling spacing and structure.
-          </p>
-        </div>
-        <div class="bg-white shadow-md rounded-lg p-6">
-          <h2 class="text-xl font-semibold text-gray-800">Responsive Design</h2>
-          <p class="text-gray-600 mt-2">
-            Responsive design allows web pages to adapt to different screen
-            sizes and resolutions for a better user experience.
+
+        <div
+          class="bg-white shadow-lg rounded-lg p-5 w-125 text-green-500 mt-7"
+        >
+          <h2 class="font-bold text-xl mb-2">Box Model</h2>
+          <p class="text-gray-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+            voluptates? Reiciendis non dolorum quasi deserunt libero, eos
+            voluptate dolorem explicabo.
           </p>
         </div>
       </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center py-4">
-      <p>Created by roll no 25 | All Rights Reserved</p>
+      <div class="bg-white shadow-lg rounded-lg p-5 w-125 text-green-500 h-40">
+        <h2 class="font-bold text-xl mb-2">Responsive Design</h2>
+        <p class="text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+          voluptates? Reiciendis non dolorum quasi deserunt libero, eos
+          voluptate dolorem explicabo.
+        </p>
+      </div>
+    </div>
+    <footer class="bg-black text-white text-center p-5">
+      Crwated by Abhishek Yadav | Don't Follow me
     </footer>
   </body>
 </html>
