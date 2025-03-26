@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Website</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <nav class="bg-blue-500 p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="text-white text-xl font-bold">My Website</div>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-white hover:text-blue-200">Home</a></li>
+                    <li><a href="#" class="text-white hover:text-blue-200">About</a></li>
+                    <li><a href="#" class="text-white hover:text-blue-200">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <div class="text-center">
+                <h1 class="text-3xl font-bold mb-6">Welcome to My Website</h1>
+                <p class="mb-6">Click the button below to open the form.</p>
+
+                <button
+                    onclick="document.getElementById('myForm').classList.remove('hidden')"
+                    class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition duration-300"
+                >
+                    Open Form
+                </button>
+
+                <div id="myForm" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div class="bg-white p-8 rounded-lg shadow-xl">
+                        <h2 class="text-2xl mb-4">Contact Form</h2>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Name" class="w-full p-2 border rounded" />
+                            <input type="email" placeholder="Email" class="w-full p-2 border rounded" />
+                            <textarea placeholder="Your Message" class="w-full p-2 border rounded" rows="4"></textarea>
+                            <div class="flex space-x-4">
+                                <button
+                                    type="submit"
+                                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                                >
+                                    Submit
+                                </button>
+                                <button
+                                    type="button"
+                                    onclick="document.getElementById('myForm').classList.add('hidden')"
+                                    class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-800 text-white py-4">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2025 My Website. Use it loosers.</p>
+            </div>
+        </footer>
+    </body>
+</html>
