@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign Up Form</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-900 min-h-screen flex items-center justify-center">
+        <div id="container"></div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const container = document.getElementById("container");
+
+                // Create the form elements using DOM manipulation
+                const formCard = document.createElement("div");
+                formCard.className = "bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md";
+
+                const title = document.createElement("h2");
+                title.className = "text-2xl font-bold mb-6 text-center text-white";
+                title.textContent = "Create Account";
+
+                const form = document.createElement("form");
+
+                // Name input
+                const nameDiv = document.createElement("div");
+                nameDiv.className = "mb-4";
+
+                const nameLabel = document.createElement("label");
+                nameLabel.setAttribute("for", "name");
+                nameLabel.className = "block text-gray-300 text-sm font-medium mb-2";
+                nameLabel.textContent = "Full Name";
+
+                const nameInput = document.createElement("input");
+                nameInput.setAttribute("type", "text");
+                nameInput.setAttribute("id", "name");
+                nameInput.setAttribute("placeholder", "John Doe");
+                nameInput.setAttribute("required", "");
+                nameInput.className =
+                    "w-full px-3 py-2 border bg-gray-700 text-white border-gray-600 rounded-md focus:outline-none";
+
+                // Function to handle input state changes
+                const handleInputChange = (input) => {
+                    input.addEventListener("focus", () => {
+                        input.classList.remove("border-gray-600", "border-green-500");
+                        input.classList.add("border-blue-500");
+                    });
+
+                    input.addEventListener("blur", () => {
+                        if (input.value.trim() !== "") {
+                            input.classList.remove("border-blue-500", "border-gray-600");
+                            input.classList.add("border-green-500");
+                        } else {
+                            input.classList.remove("border-blue-500", "border-green-500");
+                            input.classList.add("border-gray-600");
+                        }
+                    });
+                };
+
+                handleInputChange(nameInput);
+                nameDiv.appendChild(nameLabel);
+                nameDiv.appendChild(nameInput);
+
+                // Email input
+                const emailDiv = document.createElement("div");
+                emailDiv.className = "mb-4";
+
+                const emailLabel = document.createElement("label");
+                emailLabel.setAttribute("for", "email");
+                emailLabel.className = "block text-gray-300 text-sm font-medium mb-2";
+                emailLabel.textContent = "Email";
+
+                const emailInput = document.createElement("input");
+                emailInput.setAttribute("type", "email");
+                emailInput.setAttribute("id", "email");
+                emailInput.setAttribute("placeholder", "your@email.com");
+                emailInput.setAttribute("required", "");
+                emailInput.className =
+                    "w-full px-3 py-2 border bg-gray-700 text-white border-gray-600 rounded-md focus:outline-none";
+
+                handleInputChange(emailInput);
+                emailDiv.appendChild(emailLabel);
+                emailDiv.appendChild(emailInput);
+
+                // Password input
+                const passwordDiv = document.createElement("div");
+                passwordDiv.className = "mb-4";
+
+                const passwordLabel = document.createElement("label");
+                passwordLabel.setAttribute("for", "password");
+                passwordLabel.className = "block text-gray-300 text-sm font-medium mb-2";
+                passwordLabel.textContent = "Password";
+
+                const passwordInput = document.createElement("input");
+                passwordInput.setAttribute("type", "password");
+                passwordInput.setAttribute("id", "password");
+                passwordInput.setAttribute("placeholder", "••••••••");
+                passwordInput.setAttribute("required", "");
+                passwordInput.className =
+                    "w-full px-3 py-2 border bg-gray-700 text-white border-gray-600 rounded-md focus:outline-none";
+
+                handleInputChange(passwordInput);
+                passwordDiv.appendChild(passwordLabel);
+                passwordDiv.appendChild(passwordInput);
+
+                // Confirm Password input
+                const confirmDiv = document.createElement("div");
+                confirmDiv.className = "mb-6";
+
+                const confirmLabel = document.createElement("label");
+                confirmLabel.setAttribute("for", "confirm-password");
+                confirmLabel.className = "block text-gray-300 text-sm font-medium mb-2";
+                confirmLabel.textContent = "Confirm Password";
+
+                const confirmInput = document.createElement("input");
+                confirmInput.setAttribute("type", "password");
+                confirmInput.setAttribute("id", "confirm-password");
+                confirmInput.setAttribute("placeholder", "••••••••");
+                confirmInput.setAttribute("required", "");
+                confirmInput.className =
+                    "w-full px-3 py-2 border bg-gray-700 text-white border-gray-600 rounded-md focus:outline-none";
+
+                handleInputChange(confirmInput);
+                confirmDiv.appendChild(confirmLabel);
+                confirmDiv.appendChild(confirmInput);
+
+                // Submit button
+                const submitButton = document.createElement("button");
+                submitButton.setAttribute("type", "submit");
+                submitButton.className =
+                    "w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors";
+                submitButton.textContent = "Sign Up";
+
+                // Add event listener for form submission
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    alert("Sign up successful!");
+                    // Add your registration logic here
+                });
+
+                // Assemble the form
+                form.appendChild(nameDiv);
+                form.appendChild(emailDiv);
+                form.appendChild(passwordDiv);
+                form.appendChild(confirmDiv);
+                form.appendChild(submitButton);
+
+                formCard.appendChild(title);
+                formCard.appendChild(form);
+                container.appendChild(formCard);
+            });
+        </script>
+    </body>
+</html>
