@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Image Gallery</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-[#7287fd] flex justify-center items-center min-h-screen p-4">
+        <div class="max-w-xl mx-auto bg-[#dc8a78] rounded-lg shadow-md p-6">
+            <div class="relative h-[520px] mb-4">
+                <!-- Images will be displayed one at a time -->
+                <img
+                    id="image0"
+                    src="https://images.pexels.com/photos/1670977/pexels-photo-1670977.jpeg"
+                    alt="Gallery image 1"
+                    class="w-full h-full object-cover rounded"
+                />
+                <img
+                    id="image1"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5loM4DJKAQsMu0pX0_NmM7wodAwvVA1tQKw&s"
+                    alt="Gallery image 2"
+                    class="w-full h-full object-cover rounded hidden"
+                />
+                <img
+                    id="image2"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVU6smxrYIh9Lyrdh35CbUjfjGtuHqM_0hRg&s"
+                    alt="Gallery image 3"
+                    class="w-full h-full object-cover rounded hidden"
+                />
+                <img
+                    id="image3"
+                    src="https://i.pinimg.com/736x/19/73/66/1973667bf51848e32d9aaffc906e1dd2.jpg"
+                    alt="Gallery image 4"
+                    class="w-full h-full object-cover rounded hidden"
+                />
+            </div>
+            <div class="flex justify-between">
+                <button id="prevBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                    PREVIOUS
+                </button>
+                <button id="nextBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">NEXT</button>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const images = document.querySelectorAll('[id^="image"]');
+                let currentImageIndex = 0;
+                const totalImages = images.length;
+
+                function updateGallery() {
+                    images.forEach((img, index) => {
+                        if (index === currentImageIndex) {
+                            img.classList.remove("hidden");
+                        } else {
+                            img.classList.add("hidden");
+                        }
+                    });
+                }
+
+                document.getElementById("nextBtn").addEventListener("click", function () {
+                    currentImageIndex = (currentImageIndex + 1) % totalImages;
+                    updateGallery();
+                });
+
+                document.getElementById("prevBtn").addEventListener("click", function () {
+                    currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+                    updateGallery();
+                });
+
+                updateGallery();
+            });
+        </script>
+    </body>
+</html>
